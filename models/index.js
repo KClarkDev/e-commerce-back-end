@@ -1,16 +1,32 @@
 // import models
-const Product = require('./Product');
-const Category = require('./Category');
-const Tag = require('./Tag');
-const ProductTag = require('./ProductTag');
+const Product = require("./Product");
+const Category = require("./Category");
+const Tag = require("./Tag");
+const ProductTag = require("./ProductTag");
 
-// Products belongsTo Category
+// STUDY NOTE: The "through" option is specifically used in the context of defining a many-to-many association with an intermediary or junction table. This intermediary table holds the relationships between the associated records.
 
-// Categories have many Products
+// Set up associations between tables
 
-// Products belongToMany Tags (through ProductTag)
+Product.belongsTo(Category, {
+  foreignKey: "category_id",
+});
 
-// Tags belongToMany Products (through ProductTag)
+Category.hasMany(Product);
+
+Product.belongsToMany(Tag, {
+  through: {
+    model: product_tag,
+  },
+  foreignKey: "tag_id",
+});
+
+Tag.belongsToMany(Product, {
+  through: {
+    model: product_tag,
+  },
+  foreignKey: "product_id",
+});
 
 module.exports = {
   Product,
