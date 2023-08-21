@@ -47,7 +47,11 @@ router.post("/", async (req, res) => {
     });
 
     // Respond with the newly created category
-    res.status(201).json(newCategory);
+    res
+      .status(201)
+      .json({
+        message: `${newCategory.category_name} category created successfully!`,
+      });
   } catch (err) {
     res.status(500).json(err);
   }
