@@ -17,15 +17,7 @@ The application provides API routes for all CRUD operations to manage a mysql da
 ## Credits
 
 Source repo: https://github.com/coding-boot-camp/fantastic-umbrella
+
 This repo was created as part of the University of Richmond Coding Bootcamp coursework.
 
 
-
-
-
-
-
-
-
-
-Source repo: https://github.com/coding-boot-camp/fantastic-umbrella
